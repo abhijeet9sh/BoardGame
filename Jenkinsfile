@@ -5,12 +5,13 @@ pipeline {
         // Define environment variables
         SCANNER_HOME = tool 'sonar-scanner'
     }
-
+/*
     tools {
         // Define tools like JDK or Maven
         jdk 'JDK17'
         maven 'maven3'
     }
+    */
 
     stages {
         /*stage('Checkout') {
