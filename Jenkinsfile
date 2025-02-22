@@ -32,6 +32,7 @@ pipeline {
             steps {
                 // Run unit tests or other tests
                 sh 'mvn test'
+                cleanWs()
             }
         }
 
@@ -47,9 +48,6 @@ pipeline {
             // Actions to perform when the pipeline fails
             echo 'Pipeline failed!'
         }
-        always {
-            // Actions to perform no matter what (success or failure)
-            cleanWs()  // Clean up workspace after the build
-        }
+        
     }
 }
