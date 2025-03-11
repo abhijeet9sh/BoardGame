@@ -33,7 +33,7 @@ pipeline {
             steps {
                 // Run unit tests or other tests
                 sh 'mvn test'
-                cleanWs()
+                //cleanWs()
             }
         }
 
