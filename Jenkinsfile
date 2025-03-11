@@ -39,9 +39,17 @@ pipeline {
 
          stage('File system scan') {
             steps {
-                sh 'mkdir -p /var/lib/jenkins/pipe/tmp/trivy && chmod -R 777 /var/lib/jenkins/pipe/tmp/trivy '
-                sh 'trivy fs . --output /var/lib/jenkins/pipe/tmp/trivy/trivy-report.html'
-
+                script{
+                    // Create the directory if it doesn't exist
+            sh 'mkdir -p /var/lib/jenkins/pipe/tmp/trivy'
+            
+            // Set the appropriate permissions
+            sh 'chmod -R 777 /var/lib/jenkins/pipe/tmp/trivy'
+            
+            // Run the trivy command and save the output
+            sh 'trivy fs . --output /var/lib/jenkins/pipe/tmp/trivy/trivy-report.html'
+                }
+                
             }
         }
 
