@@ -41,13 +41,13 @@ pipeline {
             steps {
                 script{
                     // Create the directory if it doesn't exist
-            sh 'mkdir -p /var/lib/jenkins/pipe/tmp/trivy'
+            //sh 'mkdir -p /var/lib/jenkins/pipe/tmp/trivy'
             
             // Set the appropriate permissions
-            sh 'chmod -R 777 /var/lib/jenkins/pipe/tmp/trivy'
+            //sh 'chmod -R 777 /var/lib/jenkins/pipe/tmp/trivy'
             
             // Run the trivy command and save the output
-            sh 'trivy fs . --output /var/lib/jenkins/pipe/tmp/trivy/trivy-report.html'
+             trivy fs . --output /var/lib/jenkins/pipe/tmp/trivy/trivy-report.html
                 }
                 
             }
