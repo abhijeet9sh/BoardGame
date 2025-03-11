@@ -39,7 +39,10 @@ pipeline {
 
          stage('File system scan') {
             steps {
-                sh "trivy fs --format table -o trivy-fs-report.html ."
+                mkdir -p /var/lib/jenkins/pipe/tmp/trivy
+                chmod -R 777 /var/lib/jenkins/pipe/tmp/trivy
+                sh 'trivy fs:. --output /var/lib/jenkins/pipe/tmp/trivy/trivy-report.html'
+
             }
         }
 
