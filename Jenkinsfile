@@ -1,4 +1,4 @@
-@Library('shared-library') _
+@Library('shared-library-sonar') _
 pipeline {
     agent any  // This specifies that the pipeline will run on any available agent
 
@@ -61,7 +61,7 @@ pipeline {
             steps {
                 script{
 
-                    def token = new shared-library()
+                    def var = new shared-library()
 
                     
 
