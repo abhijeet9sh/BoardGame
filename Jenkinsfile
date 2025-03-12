@@ -61,7 +61,7 @@ pipeline {
             steps {
                 script{
 
-                    def var = new shared-library()
+                    def var = new sharedlibrary()
 
                     
 
