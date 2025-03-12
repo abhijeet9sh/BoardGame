@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Define environment variables
-       // SCANNER_HOME = tool 'sonar-scanner'
+       SCANNER_HOME = tool 'sonar-scanner'
        TEST = "Test"
     }
 /*
