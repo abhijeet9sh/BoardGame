@@ -63,11 +63,16 @@ pipeline {
 
                     def var = new sharedlibrary()
 
-                    
+                    sh '
+                    token = var.sonartoken()
+                    echo $token
+
+                    '
 
                     sh 'mvn clean verify sonar:sonar \
                     -Dsonar.projectKey=BoardGame \
-                    -Dsonar.host.url=http://192.168.244.132:9000 '
+                    -Dsonar.host.url=http://192.168.244.132:9000 \
+                    -Dsonar.login=var.sonartoken()'
                 }
             }
         }
