@@ -37,7 +37,7 @@ pipeline {
             }
         }
 
-         stage('File system scan') {
+         /*stage('File system scan') {
             steps {
                 script{
                    sh 'whoami'
@@ -52,7 +52,7 @@ pipeline {
                 }
                 
             }
-        }
+        }*/
 
        
         stage('SonarQube Analysis') {
