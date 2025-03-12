@@ -1,4 +1,4 @@
-@Library('sharedlibrarysonar') _
+library "sharedlibrarysonar@main"
 pipeline {
     agent any  // This specifies that the pipeline will run on any available agent
 
