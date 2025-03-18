@@ -54,7 +54,7 @@ pipeline {
             //sh 'chmod -R 777 /var/lib/jenkins/pipe/tmp/trivy'
              //sh 'ls -ld /var/lib/jenkins/pipe/tmp/trivy'
             // Run the trivy command and save the output
-             sh """trivy fs . --output '${WORKSPACE}/pipe/tmp/trivy/trivy-report.html' """
+             sh """trivy fs . --output '${WORKSPACE}/trivy-report.html' """
                 }
                 
             }
