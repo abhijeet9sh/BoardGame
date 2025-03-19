@@ -97,6 +97,12 @@ pipeline {
                 archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
             }
         }
+
+        stage('Nexus Repo') {
+            steps {
+                nexusPublisher nexusInstanceId: 'nexus-repo-server', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '${WORKSPACE}/target/database_service_project-0.0.2.jar']], mavenCoordinate: [artifactId: 'database_service_project', groupId: 'BoardGameDeploy', packaging: 'jar', version: '0.0.2']]], tagName: '1.0'
+            }
+        }
     }
 
     
