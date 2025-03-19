@@ -55,6 +55,9 @@ pipeline {
              //sh 'ls -ld /var/lib/jenkins/pipe/tmp/trivy'
             // Run the trivy command and save the output
              sh """trivy fs . --output '${WORKSPACE}/trivy-report.html' """
+
+                    archiveArtifacts artifacts: '**/trivy-report.html', followSymlinks: false
+                    
                 }
                 
             }
